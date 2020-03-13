@@ -25,15 +25,15 @@ public class SelectNameActivity extends AppCompatActivity {
         myButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                goToSelectCharacterActivity();
+                goToSetUpJ2Activity();
             }
         });
 
         context = this;
     }
 
-    private void goToSelectCharacterActivity() {
-        Intent intent = new Intent(this,SelectCharacterActivity.class);
+    private void goToSetUpJ2Activity() {
+        Intent intent = new Intent(this,SetUpJ2Activity.class);
         startActivity(intent);
     }
 }
