@@ -13,6 +13,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mobe_challenge_yaq.Bean.HasNoise;
 import com.example.mobe_challenge_yaq.Bean.Robot;
 import com.example.mobe_challenge_yaq.R;
 import com.example.mobe_challenge_yaq.Service.NoiseService;
@@ -30,7 +31,7 @@ public class SetUpJ1Activity extends AppCompatActivity {
 
     private static Context context;
 
-    private boolean hasNoise = false;
+    private static HasNoise hasNoise;
     private int lastPos = 11;
 
     @Override
@@ -117,7 +118,14 @@ public class SetUpJ1Activity extends AppCompatActivity {
             });
         }
 
-        hasNoise.
+        hasNoise.setValueChangeListener(new HasNoise.onValueChangeListener() {
+            @Override
+            public void onChange() {
+                int rand = (int)(Math.random() * 2);
+                System.out.println(rand);
+            }
+        });
+
     }
 
     public static void removeAll() {
@@ -140,14 +148,6 @@ public class SetUpJ1Activity extends AppCompatActivity {
     }
 
     public static void callBackNoise() {
-        showTrap();
-    }
-
-    private static void showTrap() {
-        int rand = (int)(Math.random() * 2);
-        System.out.println(rand);
-       /* ImageView trap = (ImageView) gridLayout.getChildAt(SetUpJ2Activity.positionTrap.get(rand));
-        trap.setImageDrawable(context.getResources().getDrawable(R.drawable.spidertrap));
-        */
+        hasNoise.setVariable(true);
     }
 }
