@@ -66,7 +66,7 @@ public class SetUpJ2Activity extends AppCompatActivity {
                         container.setImageDrawable(getResources().getDrawable(R.drawable.pave));
                     } else if (positionTrap.size() != 2) {
                         positionTrap.add(index);
-                        container.setImageDrawable(getResources().getDrawable(R.drawable.spidertrap));
+                        container.setImageDrawable(getResources().getDrawable(R.drawable.bomb));
                     }
                     if (positionTrap.size() == 2) {
                         CharSequence text = "Tous vos pièges sont posés!";
