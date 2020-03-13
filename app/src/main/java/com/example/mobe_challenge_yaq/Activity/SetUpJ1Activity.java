@@ -124,7 +124,7 @@ public class SetUpJ1Activity extends AppCompatActivity {
                 int rand = (int)(Math.random() * 2);
                 System.out.println(rand);
                 final ImageView container = (ImageView) gridLayout.getChildAt(SetUpJ2Activity.positionTrap.get(rand));
-                container.setImageDrawable(getResources().getDrawable(R.drawable.spidertrap));
+                container.setImageDrawable(getResources().getDrawable(R.drawable.bomb));
             }
         });
 
