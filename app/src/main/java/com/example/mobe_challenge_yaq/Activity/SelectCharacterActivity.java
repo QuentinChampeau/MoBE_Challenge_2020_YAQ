@@ -12,12 +12,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobe_challenge_yaq.Bean.Robot;
 import com.example.mobe_challenge_yaq.R;
-import com.google.gson.Gson;
 
 public class SelectCharacterActivity extends AppCompatActivity {
 
-    private Robot robot;
     public static Bitmap robotBitmap;
+
+    private Robot robot;
+
     private GridLayout gridLayout;
 
     @Override
@@ -37,7 +38,7 @@ public class SelectCharacterActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     BitmapDrawable bitmapDrawable = (BitmapDrawable) character.getDrawable();
-                   robotBitmap = bitmapDrawable.getBitmap();
+                    robotBitmap = bitmapDrawable.getBitmap();
                     goToSetUpJ1Activity();
                 }
             });
@@ -45,7 +46,15 @@ public class SelectCharacterActivity extends AppCompatActivity {
     }
 
     private void goToSetUpJ1Activity() {
-        Intent intent = new Intent(this,SetUpJ1Activity.class);
+        Intent intent = new Intent(this, SetUpJ1Activity.class);
         startActivity(intent);
+    }
+
+    public static Bitmap getRobotBitmap() {
+        return robotBitmap;
+    }
+
+    public static void setRobotBitmap(Bitmap robotBitmap) {
+        SelectCharacterActivity.robotBitmap = robotBitmap;
     }
 }
