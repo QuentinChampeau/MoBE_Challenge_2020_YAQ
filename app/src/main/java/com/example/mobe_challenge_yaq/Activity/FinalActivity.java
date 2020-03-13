@@ -15,8 +15,9 @@ public class FinalActivity extends AppCompatActivity {
 
     GridLayout gridLayout;
 
-    public  static boolean victory = true;
+    public static boolean victory = true;
     boolean finish = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,20 +38,19 @@ public class FinalActivity extends AppCompatActivity {
                     }
 
                     imageView.setImageBitmap(SelectCharacterActivity.robotBitmap);
-                    if(SetUpJ2Activity.positionTrap.contains(SetUpJ1Activity.joueur1.getDeplacement().get(index))){
+                    if (SetUpJ2Activity.positionTrap.contains(SetUpJ1Activity.joueur1.getDeplacement().get(index))) {
                         victory = false;
                         finish = true;
                         goToVictory();
 
                     }
                     if (index == SetUpJ1Activity.joueur1.getDeplacement().size() - 1) {
-                        if(!finish){
+                        if (!finish) {
                             goToVictory();
                         }
                     }
                 }
             }, 2000 * i);
-
         }
     }
 

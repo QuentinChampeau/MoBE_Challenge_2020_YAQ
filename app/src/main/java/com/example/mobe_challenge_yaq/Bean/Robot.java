@@ -60,7 +60,7 @@ public class Robot implements Parcelable {
         this.pdv = pdv;
     }
 
-    public void addDeplacement(int index){
+    public void addDeplacement(int index) {
         this.deplacement.add(index);
     }
 

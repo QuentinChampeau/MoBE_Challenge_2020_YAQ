@@ -8,15 +8,7 @@ import com.example.mobe_challenge_yaq.Activity.SetUpJ1Activity;
 
 public final class NoiseService {
     private static final int NOISEDETECT = 207000;
-
-    public static void start() {
-        new Thread(new Runnable() {
-            public void run() {
-                listening();
-            }
-        }).start();
-    }
-
+    
     private static boolean listening() {
         int minSize = AudioRecord.getMinBufferSize(8000,
                 AudioFormat.CHANNEL_IN_MONO,

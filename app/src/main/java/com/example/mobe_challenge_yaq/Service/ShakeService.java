@@ -4,10 +4,8 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.widget.Toast;
 
 import com.example.mobe_challenge_yaq.Activity.SetUpJ1Activity;
-import com.example.mobe_challenge_yaq.MainActivity;
 
 public class ShakeService {
     private static float mAccel; // acceleration apart from gravity
@@ -24,7 +22,6 @@ public class ShakeService {
         mAccelCurrent = SensorManager.GRAVITY_EARTH;
         mAccelLast = SensorManager.GRAVITY_EARTH;
     }
-
 
     private static final SensorEventListener mSensorListener = new SensorEventListener() {
 

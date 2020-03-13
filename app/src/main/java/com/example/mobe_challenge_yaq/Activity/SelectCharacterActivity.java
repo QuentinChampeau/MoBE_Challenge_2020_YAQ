@@ -47,7 +47,7 @@ public class SelectCharacterActivity extends AppCompatActivity {
 
     private void goToSetUpJ1Activity() {
         Intent intent = new Intent(this, SetUpJ1Activity.class);
-        intent.putExtra("robotPlayer",getIntent().getStringExtra("robotname"));
+        intent.putExtra("robotPlayer", getIntent().getStringExtra("robotname"));
         startActivity(intent);
     }
 

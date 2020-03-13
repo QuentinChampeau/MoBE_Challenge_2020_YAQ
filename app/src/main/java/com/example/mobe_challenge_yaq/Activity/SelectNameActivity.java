@@ -37,8 +37,8 @@ public class SelectNameActivity extends AppCompatActivity {
     }
 
     private void goToSetUpJ2Activity() {
-        Intent intent = new Intent(this,SetUpJ2Activity.class);
-        intent.putExtra("playerName",name.getText());
+        Intent intent = new Intent(this, SetUpJ2Activity.class);
+        intent.putExtra("playerName", name.getText());
         startActivity(intent);
     }
 }

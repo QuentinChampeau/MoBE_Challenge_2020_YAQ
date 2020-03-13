@@ -1,4 +1,5 @@
 package com.example.mobe_challenge_yaq.Bean;
+
 /*
     Position (x,y) pour gérer la position du robot
     sur une matrice à deux dimensions
