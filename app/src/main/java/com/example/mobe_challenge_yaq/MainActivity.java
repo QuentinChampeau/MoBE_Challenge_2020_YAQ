@@ -3,11 +3,11 @@ package com.example.mobe_challenge_yaq;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
-import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -19,9 +19,7 @@ import com.example.mobe_challenge_yaq.Service.ShakeService;
 public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_RECORD_AUDIO_PERMISSION = 200;
 
-    private Context context;
-
-    private ShakeService shakeService;
+    private static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
         context = this;
         Button playButton = (Button) findViewById(R.id.playButton);
 
-        // TODO remove context, il est utilisé que pour afficher un toast
-        shakeService = new ShakeService((SensorManager) getSystemService(Context.SENSOR_SERVICE), context);
+        ShakeService.Start((SensorManager) getSystemService(Context.SENSOR_SERVICE));
 
         NoiseService.start();
 
@@ -55,21 +52,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        shakeService.getSensorManager().registerListener(shakeService.getmSensorListener(),
-                shakeService.getSensorManager().getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
-                SensorManager.SENSOR_DELAY_UI);
-    }
-
-    @Override
-    protected void onPause() {
-        shakeService.getSensorManager().unregisterListener(shakeService.getmSensorListener());
-        super.onPause();
-    }
-
     public void requestRecordAudioPermission() {
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_RECORD_AUDIO_PERMISSION);
+    }
+
+    public static void callBackShaken() {
+        Toast.makeText(context, "Shaken !", Toast.LENGTH_SHORT).show();
+    }
+
+    public static void callBackNoise() {
+        System.out.println("Noise");
     }
 }

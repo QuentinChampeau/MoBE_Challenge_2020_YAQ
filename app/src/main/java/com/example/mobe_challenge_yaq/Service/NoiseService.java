@@ -4,6 +4,8 @@ import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
 
+import com.example.mobe_challenge_yaq.MainActivity;
+
 public final class NoiseService {
     private static final int NOISEDETECT = 27000;
 
@@ -34,7 +36,7 @@ public final class NoiseService {
                     int blow_value = Math.abs(s);
                     System.out.println("Blow Value = " + blow_value);
                     audioRecord.stop();
-
+                    MainActivity.callBackNoise();
                     // stop
                     return true;
                 }
