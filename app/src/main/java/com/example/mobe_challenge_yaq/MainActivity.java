@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         ShakeService.Start((SensorManager) getSystemService(Context.SENSOR_SERVICE));
 
-        NoiseService.start();
+        //NoiseService.start();
 
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
