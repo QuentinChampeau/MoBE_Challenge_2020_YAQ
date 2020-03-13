@@ -130,5 +130,5 @@
         android:layout_column="2"
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:srcCompat="@drawable/flag" />
 </GridLayout>
