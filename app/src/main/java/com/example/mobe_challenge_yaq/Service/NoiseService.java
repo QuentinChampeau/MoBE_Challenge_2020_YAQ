@@ -1,21 +1,33 @@
 package com.example.mobe_challenge_yaq.Service;
 
+import android.content.Context;
 import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
+import android.os.Handler;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.mobe_challenge_yaq.Activity.SetUpJ1Activity;
 
 public final class NoiseService {
     private static final int NOISEDETECT = 27000;
 
-    public static void start() {
-        new Thread(new Runnable() {
+    Context c;
+
+    public NoiseService(Context c){
+        this.c=c;
+
+        Handler mainHandler = new Handler(c.getMainLooper());
+        Runnable myRunnable = new Runnable() {
+            @Override
             public void run() {
                 listening();
-            }
-        }).start();
+            } // This is your code
+        };
+        mainHandler.post(myRunnable);
     }
+
 
     private static boolean listening() {
         int minSize = AudioRecord.getMinBufferSize(8000,
