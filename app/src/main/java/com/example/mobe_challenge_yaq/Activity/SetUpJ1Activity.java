@@ -45,6 +45,8 @@ public class SetUpJ1Activity extends AppCompatActivity {
 
         ShakeService.Start((SensorManager) getSystemService(Context.SENSOR_SERVICE));
         NoiseService noiseService = new NoiseService(this);
+
+
         buttonFinal = findViewById(R.id.goToFinalActivity);
         buttonFinal.setOnClickListener(new View.OnClickListener() {
             @Override
