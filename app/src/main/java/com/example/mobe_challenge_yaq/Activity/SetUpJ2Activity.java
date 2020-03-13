@@ -63,7 +63,7 @@ public class SetUpJ2Activity extends AppCompatActivity {
 
                     if (positionTrap.contains(index)) {
                         positionTrap.remove(positionTrap.indexOf(index));
-                        container.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher_round));
+                        container.setImageDrawable(getResources().getDrawable(R.drawable.pave));
                     } else if (positionTrap.size() != 2) {
                         positionTrap.add(index);
                         container.setImageDrawable(getResources().getDrawable(R.drawable.spidertrap));
