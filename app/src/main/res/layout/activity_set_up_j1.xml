@@ -1,9 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.SetUpJ1Activity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:rowCount="4"
+    android:columnCount="3"
+    tools:context=".Activity.SetUpJ1Activity"
+    android:id="@+id/j1Activity"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="1"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="1"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="1"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="2"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="2"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="2"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="3"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="3"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="3"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        app:srcCompat="@mipmap/ic_launcher_round" />
+</GridLayout>
