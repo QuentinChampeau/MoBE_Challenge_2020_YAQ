@@ -12,7 +12,7 @@ public class ShakeService {
     private float accelCurrent; // current acceleration including gravity
     private float accelLast; // last acceleration including gravity
     private SensorManager sensorManager;
-    
+
     // TODO remove context, il est utilisé que pour afficher un toast
     private Context context;
 
