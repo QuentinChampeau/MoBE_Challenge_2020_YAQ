@@ -4,6 +4,7 @@ package com.example.mobe_challenge_yaq.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.SensorManager;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobe_challenge_yaq.Bean.Robot;
 import com.example.mobe_challenge_yaq.R;
+import com.example.mobe_challenge_yaq.Service.NoiseService;
 import com.example.mobe_challenge_yaq.Service.ShakeService;
 
 
@@ -28,6 +30,7 @@ public class SetUpJ1Activity extends AppCompatActivity {
 
     private static Context context;
 
+    private boolean hasNoise = false;
     private int lastPos = 11;
 
     @Override
@@ -40,7 +43,8 @@ public class SetUpJ1Activity extends AppCompatActivity {
         gridLayout = findViewById(R.id.j1Activity);
 
         ShakeService.Start((SensorManager) getSystemService(Context.SENSOR_SERVICE));
-
+        NoiseService.start();
+//        runOnUiThread(new NoiseService());
         buttonFinal = findViewById(R.id.goToFinalActivity);
         buttonFinal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,6 +116,8 @@ public class SetUpJ1Activity extends AppCompatActivity {
                 }
             });
         }
+
+        hasNoise.
     }
 
     public static void removeAll() {
@@ -131,5 +137,17 @@ public class SetUpJ1Activity extends AppCompatActivity {
 
     public static void callBackShaken() {
         removeAll();
+    }
+
+    public static void callBackNoise() {
+        showTrap();
+    }
+
+    private static void showTrap() {
+        int rand = (int)(Math.random() * 2);
+        System.out.println(rand);
+       /* ImageView trap = (ImageView) gridLayout.getChildAt(SetUpJ2Activity.positionTrap.get(rand));
+        trap.setImageDrawable(context.getResources().getDrawable(R.drawable.spidertrap));
+        */
     }
 }
