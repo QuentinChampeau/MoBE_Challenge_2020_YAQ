@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import com.example.mobe_challenge_yaq.Bean.Position;
 import com.example.mobe_challenge_yaq.Bean.Robot;
 import com.example.mobe_challenge_yaq.R;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -33,8 +34,9 @@ public class SetUpJ1Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_up_j1);
+        joueur1 =new Robot("Rosé", SelectCharacterActivity.robotBitmap, 0, 0);
 
-        joueur1 = new Robot("J1",null,0,0);
+
         gridLayout = findViewById(R.id.j1Activity);
 
 
@@ -80,7 +82,8 @@ public class SetUpJ1Activity extends AppCompatActivity {
 
                         if(gauche || bas || droite || haut){
                             joueur1.addDeplacement(index);
-                            container.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher));
+                            container.setImageBitmap(SelectCharacterActivity.robotBitmap);
+//                            container.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher));
                         }
                     }
 

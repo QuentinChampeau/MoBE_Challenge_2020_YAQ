@@ -1,15 +1,18 @@
 package com.example.mobe_challenge_yaq.Bean;
 
 import android.graphics.Bitmap;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.support.v4.app.INotificationSideChannel;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /*
     bean robot
  */
-public class Robot {
+public class Robot implements Parcelable {
 
     private String nom;
 
@@ -83,5 +86,15 @@ public class Robot {
 
     public void setDeplacement(List<Integer> deplacement) {
         this.deplacement = deplacement;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+
     }
 }

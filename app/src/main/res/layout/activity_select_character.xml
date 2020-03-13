@@ -22,7 +22,7 @@
             android:layout_rowWeight="1"
             android:layout_column="0"
             android:layout_columnWeight="1"
-            app:srcCompat="@drawable/cyberEye"/>
+            app:srcCompat="@drawable/cybereye"/>
 
         <ImageView
             android:layout_width="10dp"
@@ -41,7 +41,7 @@
             android:layout_rowWeight="1"
             android:layout_column="2"
             android:layout_columnWeight="1"
-            app:srcCompat="@drawable/monoRobot"/>
+            app:srcCompat="@drawable/monorobot"/>
 
         <ImageView
             android:layout_width="10dp"
