@@ -10,7 +10,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:text="Fini"
-        android:id="@+id/nextActivity"/>
+        android:id="@+id/mybutton"/>
 
     <GridLayout
         android:id="@+id/j2Activity"
