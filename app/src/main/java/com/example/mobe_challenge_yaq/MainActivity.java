@@ -1,12 +1,15 @@
 package com.example.mobe_challenge_yaq;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         context = this;
         Button playButton = (Button) findViewById(R.id.playButton);
+        Button gameRulesButton = (Button) findViewById(R.id.gameRulesButton);
 
         ShakeService.Start((SensorManager) getSystemService(Context.SENSOR_SERVICE));
 
@@ -41,11 +45,27 @@ public class MainActivity extends AppCompatActivity {
                 goToSelectPlayerName();
             }
         });
+
+        gameRulesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                goToGameRules();
+            }
+        });
     }
 
     private void goToSelectPlayerName() {
         Intent intent = new Intent(context, SelectNameActivity.class);
         changeActivity(intent);
+    }
+
+    private void goToGameRules() {
+        Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.rules_popup);
+        dialog.setCancelable(true);
+
+        dialog.show();
     }
 
     private void changeActivity(Intent i) {

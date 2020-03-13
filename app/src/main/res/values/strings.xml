@@ -3,4 +3,22 @@
     <string name="play">Jouer</string>
     <string name="enter_name">Entrer votre nom pour commencer</string>
     <string name="validate">Valider</string>
+    <string name="game_rules_title">Règles du jeu</string>
+    <string name="game_rules_chap1"><u>I. Règle générale</u></string>
+    <string name="game_rules_chap1_content">Deux joueurs. Un robot et un piègeur. Chacun joue à tour de rôle (cachez bien votre écran quand vous jouez). Saurez vous arriver au bout du niveau sans exploser ou réussirez-vous à empêcher le robot de gagner ? Seul vous aurez la réponse.</string>
+    <string name="game_rules_chap2"><u>II. Comment jouer</u></string>
+    <string name="game_rules_chap2_content">Rien de plus simple, revenez en arrière et cliquez sur jouer pour jouer. Attention, jouer à ce jeu comporte des risques d\'addiction, veuillez demander l\'avis de votre médecin.</string>
+    <string name="game_rules_chap3"><u>III. joueur 2 : choisir ton robot</u></string>
+    <string name="game_rules_chap3_content">Plusieurs robots sont disponibles ! A vous de choisir lequel vous voulez jouer ! Cliquez simplement sur le robot que vous voulez incarner.</string>
+    <string name="game_rules_chap4"><u>IV. Tour du joueur 1 : le piègeur</u></string>
+    <string name="game_rules_chap4_content">Trois pièges, trois possibilités d\'empêcher le robot de continuer à voler votre trésor. Pour cela, touchez simplement les endroits que vous voulez piéger. Vous pouvez à tout momenet retirer un piège en recliquant dessus. Une fois tous vos pièges disposés astucieusement sur le terrain, cliquer sur suivant</string>
+    <string name="game_rules_chap5"><u>V. Tour du joueur 2 : déplacer le robot</u></string>
+    <string name="game_rules_chap5_content">Vous devez déplacer votre robot jusqu\'à atteindre l\'arrivée. Pour cela, cliquez sur les zones où vous voulez vous déplacer. Evidemment, vous ne pouvez choisir qu\'une case adjacente. Lorsque vous atteignez la sortie, vous pouvez confirmer cotre choix.</string>
+    <string name="game_rules_chap6"><u>VI. Tips</u></string>
+    <string name="game_rules_chap6_content">Vous pouvez secouer le téléphone pour reset votre champ de mines si vous êtes piégeur ou reset votre chemin de déplacements si vous êtes robot.
+                                            Vous pouvez utiliser l\'écholocalisation une fois dans la partie. Pour cela, faite du bruit et une mine cachée apparaitra!!
+    </string>
+
+
+
 </resources>
