@@ -60,20 +60,30 @@ public class SetUpJ2Activity extends AppCompatActivity {
             container.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    if (index != 0 && index != 11) {
 
-                    if (positionTrap.contains(index)) {
-                        positionTrap.remove(positionTrap.indexOf(index));
-                        container.setImageDrawable(getResources().getDrawable(R.drawable.pave));
-                    } else if (positionTrap.size() != 2) {
-                        positionTrap.add(index);
-                        container.setImageDrawable(getResources().getDrawable(R.drawable.spidertrap));
-                    }
-                    if (positionTrap.size() == 2) {
-                        CharSequence text = "Tous vos pièges sont posés!";
-                        int duration = Toast.LENGTH_SHORT;
-                        Toast toast = Toast.makeText(context, text, duration);
-                        toast.show();
-                        Toast.makeText(context, text, duration).show();
+                        if((positionTrap.contains(8) && index == 10) || (positionTrap.contains(10) && index == 8) || (positionTrap.contains(1) && index == 3)|| (positionTrap.contains(3) && index == 1) ){
+                            CharSequence text = "Ne bloque pas tous les chemins";
+                            int duration = Toast.LENGTH_SHORT;
+                            Toast toast = Toast.makeText(context, text, duration);
+                            toast.show();
+                            Toast.makeText(context, text, duration).show();
+                        }else {
+                            if (positionTrap.contains(index)) {
+                                positionTrap.remove(positionTrap.indexOf(index));
+                                container.setImageDrawable(getResources().getDrawable(R.drawable.pave));
+                            } else if (positionTrap.size() != 2) {
+                                positionTrap.add(index);
+                                container.setImageDrawable(getResources().getDrawable(R.drawable.spidertrap));
+                            }
+                            if (positionTrap.size() == 2) {
+                                CharSequence text = "Tous vos pièges sont posés!";
+                                int duration = Toast.LENGTH_SHORT;
+                                Toast toast = Toast.makeText(context, text, duration);
+                                toast.show();
+                                Toast.makeText(context, text, duration).show();
+                            }
+                        }
                     }
                 }
             });
