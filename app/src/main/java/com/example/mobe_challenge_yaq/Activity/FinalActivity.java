@@ -15,11 +15,12 @@ public class FinalActivity extends AppCompatActivity {
 
     GridLayout gridLayout;
 
+    public  static boolean victory = true;
+    boolean finish = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final);
-        Boolean fini = false;
         gridLayout = findViewById(R.id.finalActivity);
 
         Handler handler1 = new Handler();
@@ -36,8 +37,16 @@ public class FinalActivity extends AppCompatActivity {
                     }
 
                     imageView.setImageBitmap(SelectCharacterActivity.robotBitmap);
-                    if (index == SetUpJ1Activity.joueur1.getDeplacement().size() - 1) {
+                    if(SetUpJ2Activity.positionTrap.contains(SetUpJ1Activity.joueur1.getDeplacement().get(index))){
+                        victory = false;
+                        finish = true;
                         goToVictory();
+
+                    }
+                    if (index == SetUpJ1Activity.joueur1.getDeplacement().size() - 1) {
+                        if(!finish){
+                            goToVictory();
+                        }
                     }
                 }
             }, 2000 * i);
