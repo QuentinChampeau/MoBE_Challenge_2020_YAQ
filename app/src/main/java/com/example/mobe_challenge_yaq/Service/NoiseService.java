@@ -4,10 +4,10 @@ import android.media.AudioFormat;
 import android.media.AudioRecord;
 import android.media.MediaRecorder;
 
-import com.example.mobe_challenge_yaq.MainActivity;
+import com.example.mobe_challenge_yaq.Activity.SetUpJ1Activity;
 
 public final class NoiseService {
-    private static final int NOISEDETECT = 27000;
+    private static final int NOISEDETECT = 207000;
 
     public static void start() {
         new Thread(new Runnable() {
@@ -36,7 +36,7 @@ public final class NoiseService {
                     int blow_value = Math.abs(s);
                     System.out.println("Blow Value = " + blow_value);
                     audioRecord.stop();
-                    MainActivity.callBackNoise();
+                    SetUpJ1Activity.callBackNoise();
                     // stop
                     return true;
                 }

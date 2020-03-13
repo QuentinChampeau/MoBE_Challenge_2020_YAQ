@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
         Button playButton = (Button) findViewById(R.id.playButton);
         Button gameRulesButton = (Button) findViewById(R.id.gameRulesButton);
 
-        ShakeService.Start((SensorManager) getSystemService(Context.SENSOR_SERVICE));
-
         //NoiseService.start();
 
         playButton.setOnClickListener(new View.OnClickListener() {
@@ -74,10 +72,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void requestRecordAudioPermission() {
         ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_RECORD_AUDIO_PERMISSION);
-    }
-
-    public static void callBackShaken() {
-        Toast.makeText(context, "Shaken !", Toast.LENGTH_SHORT).show();
     }
 
     public static void callBackNoise() {

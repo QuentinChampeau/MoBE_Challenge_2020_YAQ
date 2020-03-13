@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Activity.SetUpJ2Activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <Button
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:text="Fini"
-        android:id="@+id/mybutton"/>
 
     <GridLayout
         android:id="@+id/j2Activity"
@@ -18,12 +12,12 @@
         android:layout_height="match_parent"
         android:columnCount="3"
         android:rowCount="4"
-     >
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageView
             android:id="@+id/case_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_row="0"
             android:layout_rowWeight="1"
             android:layout_column="0"
@@ -32,8 +26,8 @@
 
         <ImageView
             android:id="@+id/case_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_row="0"
             android:layout_rowWeight="1"
             android:layout_column="1"
@@ -43,8 +37,8 @@
 
         <ImageView
             android:id="@+id/case_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_row="0"
             android:layout_rowWeight="1"
             android:layout_column="2"
@@ -53,8 +47,8 @@
 
         <ImageView
             android:id="@+id/case_4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_row="1"
             android:layout_rowWeight="1"
             android:layout_column="0"
@@ -63,8 +57,8 @@
 
         <ImageView
             android:id="@+id/case_5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_row="1"
             android:layout_rowWeight="1"
             android:layout_column="1"
@@ -73,8 +67,8 @@
 
         <ImageView
             android:id="@+id/case_6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_row="1"
             android:layout_rowWeight="1"
             android:layout_column="2"
@@ -83,8 +77,8 @@
 
         <ImageView
             android:id="@+id/case_7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_row="2"
             android:layout_rowWeight="1"
             android:layout_column="0"
@@ -93,8 +87,8 @@
 
         <ImageView
             android:id="@+id/case_8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_row="2"
             android:layout_rowWeight="1"
             android:layout_column="1"
@@ -103,8 +97,8 @@
 
         <ImageView
             android:id="@+id/case_9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_row="2"
             android:layout_rowWeight="1"
             android:layout_column="2"
@@ -113,8 +107,8 @@
 
         <ImageView
             android:id="@+id/case_10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_row="3"
             android:layout_rowWeight="1"
             android:layout_column="0"
@@ -123,8 +117,8 @@
 
         <ImageView
             android:id="@+id/case_11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_row="3"
             android:layout_rowWeight="1"
             android:layout_column="1"
@@ -133,12 +127,21 @@
 
         <ImageView
             android:id="@+id/case_12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_row="3"
             android:layout_rowWeight="1"
             android:layout_column="2"
             android:layout_columnWeight="1"
             app:srcCompat="@mipmap/ic_launcher_round" />
     </GridLayout>
-</LinearLayout>
+
+    <Button
+        android:id="@+id/mybutton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="Fini"
+        app:layout_constraintBottom_toBottomOf="@+id/j2Activity"
+        app:layout_constraintEnd_toEndOf="@+id/j2Activity"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
