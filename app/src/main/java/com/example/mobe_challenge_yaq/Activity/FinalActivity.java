@@ -1,14 +1,13 @@
 package com.example.mobe_challenge_yaq.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 
-import com.example.mobe_challenge_yaq.Bean.Robot;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.mobe_challenge_yaq.R;
 
 public class FinalActivity extends AppCompatActivity {
@@ -20,7 +19,7 @@ public class FinalActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final);
-
+        Boolean fini = false;
         gridLayout = findViewById(R.id.finalActivity);
 
         Handler handler1 = new Handler();
@@ -31,20 +30,24 @@ public class FinalActivity extends AppCompatActivity {
 
                 @Override
                 public void run() {
-                    if(index > 0 ){
-                        ImageView lastImage =  (ImageView) gridLayout.getChildAt(SetUpJ1Activity.joueur1.getDeplacement().get(index-1));
+                    if (index > 0) {
+                        ImageView lastImage = (ImageView) gridLayout.getChildAt(SetUpJ1Activity.joueur1.getDeplacement().get(index - 1));
                         lastImage.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher_round));
                     }
 
                     imageView.setImageBitmap(SelectCharacterActivity.robotBitmap);
+                    if (index == SetUpJ1Activity.joueur1.getDeplacement().size() - 1) {
+                        goToVictory();
+                    }
                 }
             }, 2000 * i);
 
-
         }
-
     }
 
-
+    private void goToVictory() {
+        Intent intent = new Intent(this, VictoryActivity.class);
+        startActivity(intent);
+    }
 
 }

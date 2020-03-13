@@ -44,7 +44,7 @@ public class SetUpJ1Activity extends AppCompatActivity {
         gridLayout = findViewById(R.id.j1Activity);
 
         ShakeService.Start((SensorManager) getSystemService(Context.SENSOR_SERVICE));
-        NoiseService.start();
+      //  NoiseService.start();
 
         buttonFinal = findViewById(R.id.goToFinalActivity);
         buttonFinal.setOnClickListener(new View.OnClickListener() {
