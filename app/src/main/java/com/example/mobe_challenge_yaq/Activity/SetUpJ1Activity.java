@@ -31,7 +31,7 @@ public class SetUpJ1Activity extends AppCompatActivity {
 
     private static Context context;
 
-    private static HasNoise hasNoise;
+    private static HasNoise hasNoise = new HasNoise();
     private int lastPos = 11;
 
     @Override
@@ -45,7 +45,7 @@ public class SetUpJ1Activity extends AppCompatActivity {
 
         ShakeService.Start((SensorManager) getSystemService(Context.SENSOR_SERVICE));
         NoiseService.start();
-//        runOnUiThread(new NoiseService());
+
         buttonFinal = findViewById(R.id.goToFinalActivity);
         buttonFinal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,6 +123,8 @@ public class SetUpJ1Activity extends AppCompatActivity {
             public void onChange() {
                 int rand = (int)(Math.random() * 2);
                 System.out.println(rand);
+                final ImageView container = (ImageView) gridLayout.getChildAt(SetUpJ2Activity.positionTrap.get(rand));
+                container.setImageDrawable(getResources().getDrawable(R.drawable.spidertrap));
             }
         });
 

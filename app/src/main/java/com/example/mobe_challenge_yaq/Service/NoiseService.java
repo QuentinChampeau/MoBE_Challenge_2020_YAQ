@@ -7,7 +7,7 @@ import android.media.MediaRecorder;
 import com.example.mobe_challenge_yaq.Activity.SetUpJ1Activity;
 
 public final class NoiseService {
-    private static final int NOISEDETECT = 27000;
+    private static final int NOISEDETECT = 207000;
 
     public static void start() {
         new Thread(new Runnable() {
