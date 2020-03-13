@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">MoBE_Challenge_YAQ</string>
+    <string name="app_name">You. Robot.</string>
+    <string name="play">Jouer</string>
+    <string name="enter_name">Entrer votre nom pour commencer</string>
+    <string name="validate">Valider</string>
 </resources>
