@@ -22,7 +22,7 @@
             android:layout_rowWeight="1"
             android:layout_column="0"
             android:layout_columnWeight="1"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/pave" />
 
         <ImageView
             android:id="@+id/case_2"
@@ -32,7 +32,7 @@
             android:layout_rowWeight="1"
             android:layout_column="1"
             android:layout_columnWeight="1"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/pave" />
 
 
         <ImageView
@@ -43,7 +43,7 @@
             android:layout_rowWeight="1"
             android:layout_column="2"
             android:layout_columnWeight="1"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/pave" />
 
         <ImageView
             android:id="@+id/case_4"
@@ -53,7 +53,7 @@
             android:layout_rowWeight="1"
             android:layout_column="0"
             android:layout_columnWeight="1"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/pave" />
 
         <ImageView
             android:id="@+id/case_5"
@@ -63,7 +63,7 @@
             android:layout_rowWeight="1"
             android:layout_column="1"
             android:layout_columnWeight="1"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/pave" />
 
         <ImageView
             android:id="@+id/case_6"
@@ -73,7 +73,7 @@
             android:layout_rowWeight="1"
             android:layout_column="2"
             android:layout_columnWeight="1"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/pave" />
 
         <ImageView
             android:id="@+id/case_7"
@@ -83,7 +83,7 @@
             android:layout_rowWeight="1"
             android:layout_column="0"
             android:layout_columnWeight="1"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/pave" />
 
         <ImageView
             android:id="@+id/case_8"
@@ -93,7 +93,7 @@
             android:layout_rowWeight="1"
             android:layout_column="1"
             android:layout_columnWeight="1"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/pave" />
 
         <ImageView
             android:id="@+id/case_9"
@@ -103,7 +103,7 @@
             android:layout_rowWeight="1"
             android:layout_column="2"
             android:layout_columnWeight="1"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/pave" />
 
         <ImageView
             android:id="@+id/case_10"
@@ -113,7 +113,7 @@
             android:layout_rowWeight="1"
             android:layout_column="0"
             android:layout_columnWeight="1"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/pave" />
 
         <ImageView
             android:id="@+id/case_11"
@@ -123,7 +123,7 @@
             android:layout_rowWeight="1"
             android:layout_column="1"
             android:layout_columnWeight="1"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/pave" />
 
         <ImageView
             android:id="@+id/case_12"
@@ -133,7 +133,7 @@
             android:layout_rowWeight="1"
             android:layout_column="2"
             android:layout_columnWeight="1"
-            app:srcCompat="@mipmap/ic_launcher_round" />
+            app:srcCompat="@drawable/flag" />
     </GridLayout>
 
     <Button

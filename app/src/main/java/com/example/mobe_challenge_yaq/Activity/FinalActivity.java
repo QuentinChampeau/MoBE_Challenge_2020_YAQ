@@ -32,7 +32,7 @@ public class FinalActivity extends AppCompatActivity {
                 public void run() {
                     if (index > 0) {
                         ImageView lastImage = (ImageView) gridLayout.getChildAt(SetUpJ1Activity.joueur1.getDeplacement().get(index - 1));
-                        lastImage.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher_round));
+                        lastImage.setImageDrawable(getResources().getDrawable(R.drawable.pave));
                     }
 
                     imageView.setImageBitmap(SelectCharacterActivity.robotBitmap);

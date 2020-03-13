@@ -65,7 +65,7 @@ public class SetUpJ1Activity extends AppCompatActivity {
             final int index = i;
             final ImageView container = (ImageView) gridLayout.getChildAt(i);
             if (i == joueur1.getPositionDepart()) {
-                container.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher));
+                container.setImageBitmap(joueur1.getBitmap());
             }
             container.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
@@ -138,9 +138,9 @@ public class SetUpJ1Activity extends AppCompatActivity {
             final ImageView container = (ImageView) gridLayout.getChildAt(i);
             if (i == joueur1.getPositionDepart()) {
                 joueur1.addDeplacement(joueur1.getPositionDepart());
-                container.setImageDrawable(context.getResources().getDrawable(R.mipmap.ic_launcher));
+                container.setImageBitmap(joueur1.getBitmap());
             } else {
-                container.setImageDrawable(context.getResources().getDrawable(R.mipmap.ic_launcher_round));
+                container.setImageDrawable(context.getResources().getDrawable(R.drawable.pave));
             }
         }
     }
