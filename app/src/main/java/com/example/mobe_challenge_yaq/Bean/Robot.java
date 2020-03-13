@@ -1,6 +1,9 @@
 package com.example.mobe_challenge_yaq.Bean;
 
+import android.graphics.Bitmap;
+
 import java.util.List;
+
 /*
     bean robot
  */
@@ -8,7 +11,9 @@ public class Robot {
 
     private String nom;
 
-    private  int pdv;
+    private Bitmap bitmap;
+
+    private int pdv;
 
     private Position positionDepart;
 
@@ -16,12 +21,21 @@ public class Robot {
 
     private int mancheGagne;
 
-    public Robot(String nom, Position positionDepart, List<Position> deplacement, int mancheGagne) {
+    public Robot(String nom, Bitmap bitmap, Position positionDepart, List<Position> deplacement, int mancheGagne) {
         this.nom = nom;
+        this.bitmap = bitmap;
         this.pdv = 2;
         this.positionDepart = positionDepart;
         this.deplacement = deplacement;
         this.mancheGagne = mancheGagne;
+    }
+
+    public Bitmap getBitmap() {
+        return bitmap;
+    }
+
+    public void setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
     }
 
     public String getNom() {
