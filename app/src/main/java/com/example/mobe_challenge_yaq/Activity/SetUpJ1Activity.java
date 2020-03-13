@@ -3,7 +3,10 @@ package com.example.mobe_challenge_yaq.Activity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
@@ -24,9 +27,11 @@ public class SetUpJ1Activity extends AppCompatActivity {
 
     private final int Max_COLONNE = 3;
 
-    private Robot joueur1;
+    public static Robot joueur1;
 
     private GridLayout gridLayout;
+
+    private Context context;
 
 
     @Override
@@ -35,7 +40,7 @@ public class SetUpJ1Activity extends AppCompatActivity {
         setContentView(R.layout.activity_set_up_j1);
         joueur1 =new Robot("Rosé", SelectCharacterActivity.robotBitmap, 0, 0);
 
-
+        context = this;
         gridLayout = findViewById(R.id.j1Activity);
 
 
@@ -61,6 +66,8 @@ public class SetUpJ1Activity extends AppCompatActivity {
                     Integer lastIndex = joueur1.getDeplacement().size()-1;
                     if(joueur1.getDeplacement().contains(index)){
                         System.out.println("DEJA");
+                        Intent intent = new Intent(context,FinalActivity.class);
+                        startActivity(intent);
                     }else{
 
                         if(index % 3 !=0){
