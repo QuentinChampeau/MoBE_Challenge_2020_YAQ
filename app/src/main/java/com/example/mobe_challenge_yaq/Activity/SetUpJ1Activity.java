@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import com.example.mobe_challenge_yaq.Bean.Position;
 import com.example.mobe_challenge_yaq.Bean.Robot;
 import com.example.mobe_challenge_yaq.R;
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -55,6 +54,11 @@ public class SetUpJ1Activity extends AppCompatActivity {
                     Boolean bas = false;
                     Boolean droite = false;
                     Boolean gauche = false;
+                    Integer indexGauche =0;
+                    Integer indexDroite =0;
+                    Integer indexHaut =0;
+                    Integer indexBas =0;
+                    Integer lastIndex = joueur1.getDeplacement().size()-1;
                     if(joueur1.getDeplacement().contains(index)){
                         System.out.println("DEJA");
                     }else{
@@ -62,25 +66,32 @@ public class SetUpJ1Activity extends AppCompatActivity {
                         if(index % 3 !=0){
                             if(joueur1.getDeplacement().contains(index-1)){
                                 gauche = true;
+                                indexGauche = index-1;
                             }
                         }
                         if (index % 3 !=2){
                             if(joueur1.getDeplacement().contains(index+1)){
                                 droite = true;
+                                indexDroite = index +1;
                             }
                         }
                         if(index + 3 <12){
                             if(joueur1.getDeplacement().contains(index+3)){
                                 bas = true;
+                                indexBas = index+3;
                             }
                         }
                         if(index -3 >= 0 ){
                             if(joueur1.getDeplacement().contains(index-3)){
                                 haut = true;
+                                indexHaut = index-3;
                             }
                         }
 
-                        if(gauche || bas || droite || haut){
+                        if((gauche && joueur1.getDeplacement().get(lastIndex) == indexGauche)
+                                || (droite && joueur1.getDeplacement().get(lastIndex) == indexDroite)
+                                || (haut && joueur1.getDeplacement().get(lastIndex) == indexHaut)
+                                || (bas && joueur1.getDeplacement().get(lastIndex) == indexBas)){
                             joueur1.addDeplacement(index);
                             container.setImageBitmap(SelectCharacterActivity.robotBitmap);
 //                            container.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher));
