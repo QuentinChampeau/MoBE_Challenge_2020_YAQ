@@ -6,6 +6,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.widget.Toast;
 
+import com.example.mobe_challenge_yaq.Activity.SetUpJ1Activity;
 import com.example.mobe_challenge_yaq.MainActivity;
 
 public class ShakeService {
@@ -37,7 +38,7 @@ public class ShakeService {
             mAccel = mAccel * 0.9f + delta; // perform low-cut filter
 
             if (mAccel > 12) {
-                MainActivity.callBackShaken();
+                SetUpJ1Activity.callBackShaken();
             }
         }
 

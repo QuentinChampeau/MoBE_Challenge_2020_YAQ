@@ -9,16 +9,19 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import android.content.Context;
 import android.content.Intent;
 
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mobe_challenge_yaq.Bean.Robot;
 import com.example.mobe_challenge_yaq.R;
+import com.example.mobe_challenge_yaq.Service.ShakeService;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -33,31 +36,42 @@ public class SetUpJ1Activity extends AppCompatActivity {
 
     public static Robot joueur1;
 
-    private GridLayout gridLayout;
+    private static  GridLayout gridLayout;
 
 
     private Button buttonFinal;
 
     private SelectCharacterActivity selectCharacterActivity;
 
-    private Context context;
+    private static  Context context;
+
+    private int lastPos = 11;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_up_j1);
-        joueur1 = new Robot("Rosé", selectCharacterActivity.getRobotBitmap(), 0, 0);
+        joueur1 = new Robot(getIntent().getStringExtra("robotPlayer"), selectCharacterActivity.getRobotBitmap(), 0, 0);
 
         context = this;
         gridLayout = findViewById(R.id.j1Activity);
+
+
+        ShakeService.Start((SensorManager) getSystemService(Context.SENSOR_SERVICE));
 
 
         buttonFinal = findViewById(R.id.goToFinalActivity);
         buttonFinal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context,FinalActivity.class);
-                startActivity(intent);
+
+                if(!joueur1.getDeplacement().contains(lastPos) || joueur1.getDeplacement().get(joueur1.getDeplacement().size()-1) != lastPos){
+                    System.out.println("PAS POSSIBLE");
+                }else {
+
+                    Intent intent = new Intent(context, FinalActivity.class);
+                    startActivity(intent);
+                }
             }
         });
         final int childCount = gridLayout.getChildCount();
@@ -117,5 +131,25 @@ public class SetUpJ1Activity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+
+    public static void removeAll(){
+        joueur1.getDeplacement().removeAll(joueur1.getDeplacement());
+        final int childCount = gridLayout.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            final int index = i;
+            final ImageView container = (ImageView) gridLayout.getChildAt(i);
+            if (i == joueur1.getPositionDepart()) {
+                container.setImageDrawable(context.getResources().getDrawable(R.mipmap.ic_launcher));
+            }else{
+                container.setImageDrawable(context.getResources().getDrawable(R.mipmap.ic_launcher_round));
+            }
+
+        }
+    }
+
+    public static void callBackShaken() {
+        removeAll();
     }
 }

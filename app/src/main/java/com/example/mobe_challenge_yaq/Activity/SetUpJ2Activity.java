@@ -37,8 +37,18 @@ public class SetUpJ2Activity extends AppCompatActivity {
         nextActivity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context,SelectCharacterActivity.class);
-                startActivity(intent);
+
+                if (positionTrap.size() != 2) {
+                    CharSequence text = "Veuillez poser vos piège";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                    Toast.makeText(context, text, duration).show();
+                }else {
+                    Intent intent = new Intent(context, SelectCharacterActivity.class);
+                    intent.putExtra("robotname", getIntent().getStringExtra("playerName"));
+                    startActivity(intent);
+                }
             }
         });
         context = this;
