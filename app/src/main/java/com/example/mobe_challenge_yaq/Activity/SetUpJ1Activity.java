@@ -11,6 +11,7 @@ import android.content.Intent;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 
@@ -35,6 +36,8 @@ public class SetUpJ1Activity extends AppCompatActivity {
     private GridLayout gridLayout;
 
 
+    private Button buttonFinal;
+
     private SelectCharacterActivity selectCharacterActivity;
 
     private Context context;
@@ -47,6 +50,16 @@ public class SetUpJ1Activity extends AppCompatActivity {
 
         context = this;
         gridLayout = findViewById(R.id.j1Activity);
+
+
+        buttonFinal = findViewById(R.id.goToFinalActivity);
+        buttonFinal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context,FinalActivity.class);
+                startActivity(intent);
+            }
+        });
         final int childCount = gridLayout.getChildCount();
         for (int i = 0; i < childCount; i++) {
             final int index = i;
@@ -67,8 +80,6 @@ public class SetUpJ1Activity extends AppCompatActivity {
                     Integer lastIndex = joueur1.getDeplacement().size()-1;
                     if(joueur1.getDeplacement().contains(index)){
                         System.out.println("DEJA");
-                        Intent intent = new Intent(context,FinalActivity.class);
-                        startActivity(intent);
                     }else{
 
                         if(index % 3 !=0){
