@@ -1,7 +1,9 @@
 package com.example.mobe_challenge_yaq.Bean;
 
 import android.graphics.Bitmap;
+import android.support.v4.app.INotificationSideChannel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -15,18 +17,19 @@ public class Robot {
 
     private int pdv;
 
-    private Position positionDepart;
+    private Integer positionDepart;
 
-    private List<Position> deplacement;
+    private List<Integer> deplacement;
 
     private int mancheGagne;
 
-    public Robot(String nom, Bitmap bitmap, Position positionDepart, List<Position> deplacement, int mancheGagne) {
+    public Robot(String nom, Bitmap bitmap, Integer positionDepart, int mancheGagne) {
         this.nom = nom;
         this.bitmap = bitmap;
         this.pdv = 2;
         this.positionDepart = positionDepart;
-        this.deplacement = deplacement;
+        this.deplacement = new ArrayList<>();
+        this.deplacement.add(positionDepart);
         this.mancheGagne = mancheGagne;
     }
 
@@ -54,20 +57,8 @@ public class Robot {
         this.pdv = pdv;
     }
 
-    public Position getPositionDepart() {
-        return positionDepart;
-    }
-
-    public void setPositionDepart(Position positionDepart) {
-        this.positionDepart = positionDepart;
-    }
-
-    public List<Position> getDeplacement() {
-        return deplacement;
-    }
-
-    public void setDeplacement(List<Position> deplacement) {
-        this.deplacement = deplacement;
+    public void addDeplacement(int index){
+        this.deplacement.add(index);
     }
 
     public int getMancheGagne() {
@@ -76,5 +67,21 @@ public class Robot {
 
     public void setMancheGagne(int mancheGagne) {
         this.mancheGagne = mancheGagne;
+    }
+
+    public Integer getPositionDepart() {
+        return positionDepart;
+    }
+
+    public void setPositionDepart(Integer positionDepart) {
+        this.positionDepart = positionDepart;
+    }
+
+    public List<Integer> getDeplacement() {
+        return deplacement;
+    }
+
+    public void setDeplacement(List<Integer> deplacement) {
+        this.deplacement = deplacement;
     }
 }

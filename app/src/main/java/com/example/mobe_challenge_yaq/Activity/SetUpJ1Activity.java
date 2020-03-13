@@ -34,7 +34,7 @@ public class SetUpJ1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_up_j1);
 
-        joueur1 = new Robot("J1",0,0);
+        joueur1 = new Robot("J1",null,0,0);
         gridLayout = findViewById(R.id.j1Activity);
 
 
